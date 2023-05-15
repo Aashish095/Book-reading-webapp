@@ -13,8 +13,8 @@ const connectRedis = async () => {
     await redisClient.connect();
     console.log('? Redis client connected');
     redisClient.set(
-      'tRPC',
-      'Welcome to tRPC with Next.js, Prisma, and Typescript!'
+      'tRPC', 
+      'Welcome to Book Store🤗🕵️‍♀️👨‍💻'
     );
   } catch (err: any) {
     console.log(err.message);

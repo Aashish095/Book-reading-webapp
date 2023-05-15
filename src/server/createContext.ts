@@ -1,16 +1,18 @@
 import { inferAsyncReturnType } from "@trpc/server";
 import { NextApiRequest,NextApiResponse } from "next";
+import { deserializeUser } from "./middleware/deserializeUser";
 
 export function createContext({
     req,
     res,
-    user,
+    
 }:{
     req:NextApiRequest,
     res:NextApiResponse,
-    user:string
+
 }){
-    return {req,res,user};
+   
+    return deserializeUser({req,res});
 }
 
 export type Context = inferAsyncReturnType<typeof createContext>;   

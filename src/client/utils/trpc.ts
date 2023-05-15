@@ -1,9 +1,9 @@
 import { getFetch, httpBatchLink } from "@trpc/client";
 import { createTRPCNext } from "@trpc/next";
 import superjson from "superjson";
-import { appRouter } from "~/server/routers/app.routes";
+import { AppRouter } from "../../server/routers/app.routes";
 
-export const trpc = createTRPCNext<typeof appRouter>({
+export const trpc = createTRPCNext<AppRouter>({
   config({ ctx }) {
     // Determine the URL based on the environment
     const url = process.env.NEXT_PUBLIC_VERCEL_URL
