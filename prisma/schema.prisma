@@ -11,9 +11,10 @@ datasource db {
 }
 
 model Book {
+  @@map(name: "book")
   id        Int      @id @default(autoincrement())
-  title     String
-  author    String
+  title     String   @db.VarChar(255)
+  author    String   @db.VarChar(255)
   thumbnail String
   pdf       String
   createdAt DateTime @default(now())
@@ -22,6 +23,7 @@ model Book {
 }
 
 model Rating {
+  @@map(name: "rating")
   id        Int      @id @default(autoincrement())
   bookId    Int
   rating    Int

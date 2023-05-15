@@ -100,8 +100,8 @@ const LoginPage: NextPage = () => {
             </LoadingButton>
             <span className="block">
               Need an account?{" "}
-              <Link href="/register">
-                <a className="text-ct-blue-600">Sign Up Here</a>
+              <Link className="text-ct-blue-600" href="/register">
+                Sign Up Here
               </Link>
             </span>
           </form>

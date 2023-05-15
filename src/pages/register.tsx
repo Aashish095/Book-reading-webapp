@@ -93,8 +93,8 @@ const RegisterPage: NextPage = () => {
             <FileUpLoader name="photo" />
             <span className="block">
               Already have an account?{" "}
-              <Link href="/login">
-                <a className="text-ct-blue-600">Login Here</a>
+              <Link href="/login" className="text-ct-blue-600">
+                  Login Here
               </Link>
             </span>
             <LoadingButton loading={isLoading} textColor="text-ct-blue-600">

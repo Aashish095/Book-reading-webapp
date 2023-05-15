@@ -2,14 +2,16 @@ import React, { useCallback } from 'react';
 import { Controller, useController, useFormContext } from 'react-hook-form';
 import useStore from '../store';
 import Spinner from './Spinner';
+import { toast } from "react-toastify";
 
 const CLOUDINARY_UPLOAD_PRESET = 'book-api';
-const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/Codevo/image/upload';
+const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dcysxj92z/image/upload';
 
 type FileUpLoaderProps = {
   name: string;
 };
 const FileUpLoader: React.FC<FileUpLoaderProps> = ({ name }) => {
+  console.log("file name",name)
   const {
     control,
     formState: { errors },
@@ -23,7 +25,8 @@ const FileUpLoader: React.FC<FileUpLoaderProps> = ({ name }) => {
       if (!target.files) return;
       const newFile = Object.values(target.files).map((file: File) => file);
       const formData = new FormData();
-      formData.append('file', newFile[0]!);
+      console.log("newfile",newFile)
+      formData.append('file', newFile[0]);
       formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
 
       store.setUploadingImage(true);
@@ -32,17 +35,31 @@ const FileUpLoader: React.FC<FileUpLoaderProps> = ({ name }) => {
         body: formData,
       })
         .then((res) => {
-          store.setUploadingImage(false);
+          if (!res.ok) {
+            toast('Request failed', {
+              type: "error",
+              position: "top-right",
+            });
+          }
 
+          store.setUploadingImage(false);
           return res.json();
         })
         .catch((err) => {
+          console.log("response error",err)
           store.setUploadingImage(false);
           console.log(err);
         });
 
-      if (data.secure_url) {
+      if (data?.secure_url) {
+        console.log("response",data.secure_url)
         field.onChange(data.secure_url);
+      }
+      else{
+        toast("upload image failed", {
+          type: "error",
+          position: "top-right",
+        });
       }
     },
 
