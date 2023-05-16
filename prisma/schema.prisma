@@ -19,18 +19,18 @@ model Book {
   pdf       String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  Rating    Rating[]
+  ratings   Rating[]
 }
 
 model Rating {
   @@map(name: "rating")
   id        Int      @id @default(autoincrement())
-  bookId    Int
   rating    Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  book Book @relation(fields: [bookId], references: [id])
+  book      Book     @relation(fields: [bookId], references: [id])
+  bookId    Int
 }
 
 model User {
@@ -49,10 +49,25 @@ model User {
   updatedAt DateTime @updatedAt
 
   provider String?
+  posts    Post[]
 
 }
 
 enum RoleEnumType {
   user
   admin
+}
+
+model Post {
+  id        String   @id @default(uuid())
+  title     String   @db.VarChar(255)
+  author    String   @db.VarChar(255)
+  thumbnail String
+  pdf       String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map(name: "posts")
 }

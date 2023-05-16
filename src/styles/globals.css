@@ -8,3 +8,176 @@ html {
   font-family: Poppins, sans-serif;
 }
 
+
+.homecss{
+  color: #27378C;
+}
+
+.des{
+  position: absolute;
+left: 6.5%;
+right: 20.5%;
+top: 17.33%;
+bottom: 8.33%;
+/* width: 182px; */
+height: 54px;
+font-style: normal;
+font-weight: 600;
+font-size: 40px;
+line-height: 50px;
+color: #27378C;
+flex: none;
+order: 1;
+flex-grow: 0;
+
+}
+
+.des1{
+  position: absolute;
+  left: 6.5%;
+  right: 12.5%;
+  top: 28.33%;
+  bottom: 2.33%;
+}
+.empty-box{
+box-sizing: border-box;
+padding: 32px 4px;
+gap: 12px;
+width: 190px;
+height: 275px;
+left: 736px;
+top: 565px;
+
+/* Semantics/White */
+
+background: #FFFFFF;
+/* Blue/700-Bay */
+
+border: 1px dashed #27378C;
+border-radius: 8px;
+}
+
+.plussign{
+  color: #27378C;
+padding-left: 45%;
+padding-top: 50%;
+}
+
+.adjustingtext{
+  color: #27378C;
+  padding-left: 25%;
+  padding-top: 2%;
+  text-decoration: underline;
+}
+
+.cardcss{
+  
+  width: 190px;
+  height: 300px;
+  padding-right: 15px;
+  filter: drop-shadow(1.87536px 1.87536px 1.87536px rgba(0, 0, 0, 0.25));
+  border-radius: 11.2522px;
+}
+
+.cardcss2{
+  
+  width: 325px;
+  height: 415px;
+  padding-right: 15px;
+  filter: drop-shadow(1.87536px 1.87536px 1.87536px rgba(0, 0, 0, 0.25));
+  border-radius: 11.2522px;
+}
+
+.buttoncss{
+  padding-left: 120px;
+}
+
+.empty-box2{
+box-sizing: border-box;
+
+width: 325px;
+height: 415px;
+/* Semantics/White */
+
+background: #FFFFFF;
+/* Blue/700-Bay */
+
+border: 1px dashed #27378C;
+border-radius: 8px;
+}
+
+.adjustingtext2{
+  color: #27378C;
+  padding-left: 28%;
+  padding-top: 2%;
+  text-decoration: underline;
+
+}
+
+.custom-grid-cols-2 {
+  grid-template-columns: 1fr 2fr;
+}
+
+.buttoncss2{
+  padding-bottom: 2%;
+}
+.custom-width{
+  width: 90%;
+}
+.custom-width-read{
+  width: 90%;
+}
+
+.required-symbol {
+  color: red;
+}
+
+.bookname{
+
+height: 54px;
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 54px;
+color: #27378C;
+
+} 
+
+.subtext{
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  color: #545454;
+}
+
+.custom-width-p{
+  width: 90%;
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.read-button{
+  
+/* Button */
+
+
+width: 112px;
+height: 20px;
+
+font-family: 'Satoshi';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height, or 125% */
+
+
+/* Semantics/White */
+
+  color: #FFFFFF;
+}
