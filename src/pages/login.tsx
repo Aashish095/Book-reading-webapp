@@ -42,7 +42,7 @@ const LoginPage: NextPage = () => {
         position: "top-right",
       });
       query.refetch();
-      router.push("/profile");
+      router.push("/portfolio");
     },
     onError(error) {
       toast(error.message, {

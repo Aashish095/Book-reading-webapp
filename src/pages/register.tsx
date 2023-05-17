@@ -65,8 +65,16 @@ const RegisterPage: NextPage = () => {
   }, [isSubmitSuccessful]);
 
   const onSubmitHandler: SubmitHandler<RegisterInput> = (values) => {
+    const userData = {
+      name: values.name,
+      email: values.email,
+      photo: values.photo,
+      password: values.password,
+      passwordConfirm: values.passwordConfirm,
+      post:[]
+    };
     // 👇 Execute the Mutation
-    SignUpUser(values);
+    SignUpUser(userData);
   };
   return (
     <section className="py-8 bg-ct-blue-600 min-h-screen grid place-items-center">

@@ -4,18 +4,21 @@ export const createPostSchema = object({
   title: string({
     required_error: 'Title is required',
   }),
-  content: string({
-    required_error: 'Content is required',
+  author: string({
+    required_error: 'author is required',
   }),
-  category: string({
-    required_error: 'Category is required',
+  thumbnail: string({
+    required_error: 'thumbnail is required',
   }),
-  image: string({
-    required_error: 'Image is required',
+  pdf: string({
+    required_error: 'pdf is required',
   }),
-  published: boolean({
-    required_error: 'Published is required',
+  readTime:string({
+    required_error: 'readtime is required',
   }),
+  description:string({
+    required_error: 'description is required',
+  })
 });
 
 export const params = object({
@@ -26,10 +29,9 @@ export const updatePostSchema = object({
   params,
   body: object({
     title: string(),
-    content: string(),
-    category: string(),
-    image: string(),
-    published: boolean(),
+    author: string(),
+    thumbnail: string(),
+    pdf: string(),
   }).partial(),
 });
 

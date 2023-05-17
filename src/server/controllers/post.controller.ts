@@ -24,14 +24,15 @@ export const createPostHandler = async ({
 }) => {
   try {
     const {user} = await ctx;
-
+    console.log(user)
     const post = await createPost({
       title: input.title,
-      content: input.content,
-      category: input.category,
-      image: input.image,
+      author: input.author,
+      thumbnail: input.thumbnail,
+      readTime:input.readTime,
+      description:input.description,
+      pdf: input.pdf,
       user: {connect: {id: user?.id}},
-      published: input.published
     });
 
     return {

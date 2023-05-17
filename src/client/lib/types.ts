@@ -8,5 +8,15 @@ export type IUser = {
     updatedAt: string;
     createdAt: string;
   };
+
+export type IPost = {
+  id        :string;
+  title     :string;  
+  author    :string;  
+  thumbnail :string;
+  readTime  :string;   // Add the readTime field here
+  description  :string; 
+  pdf       :string;
+}
   
   

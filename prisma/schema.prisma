@@ -10,40 +10,27 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Book {
-  @@map(name: "book")
-  id        Int      @id @default(autoincrement())
-  title     String   @db.VarChar(255)
-  author    String   @db.VarChar(255)
-  thumbnail String
-  pdf       String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  ratings   Rating[]
-}
-
 model Rating {
-  @@map(name: "rating")
   id        Int      @id @default(autoincrement())
   rating    Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  book      Book     @relation(fields: [bookId], references: [id])
-  bookId    Int
+  post   Post   @relation(fields: [postId], references: [id])
+  postId String
+
+  @@map(name: "rating")
 }
 
 model User {
-  @@map(name: "user")
-  
-  id String @id @default(uuid())
-  name String @db.VarChar(255)
-  email String @unique
-  photo String? @default("default.png")
+  id       String   @id @default(uuid())
+  name     String   @db.VarChar(255)
+  email    String   @unique
+  photo    String?  @default("default.png")
   verified Boolean? @default(false)
 
   password String
-  role RoleEnumType? @default(user)
+  role     RoleEnumType? @default(user)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -51,6 +38,7 @@ model User {
   provider String?
   posts    Post[]
 
+  @@map(name: "user")
 }
 
 enum RoleEnumType {
@@ -63,11 +51,15 @@ model Post {
   title     String   @db.VarChar(255)
   author    String   @db.VarChar(255)
   thumbnail String
+  readTime  String   // Add the readTime field here
+  description  String 
   pdf       String
   user      User     @relation(fields: [userId], references: [id])
   userId    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  ratings Rating[]
 
   @@map(name: "posts")
 }
