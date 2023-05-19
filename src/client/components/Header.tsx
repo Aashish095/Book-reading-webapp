@@ -65,7 +65,12 @@ const Header = () => {
                     Profile
                   </Link>
                 </li>
-                <li className="cursor-pointer">Create Post</li>
+                  <li>
+                    <Link href="/addpost" className="text-ct-dark-600">
+                    Create Post
+                      </Link>
+                  
+                  </li>
                 <li className="cursor-pointer" onClick={handleLogout}>
                   Logout
                 </li>

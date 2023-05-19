@@ -20,6 +20,7 @@ interface Post {
   readTime: string,
   description: string,
   thumbnail:string
+  pdf:string
 }
 
 const PortfolioPage: NextPage = () => {

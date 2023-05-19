@@ -29,14 +29,17 @@
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
     "bcryptjs": "^2.4.3",
+    "bulma": "^0.9.4",
     "cookies-next": "^2.1.1",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "file-loader": "^6.2.0",
     "jsonwebtoken": "^9.0.0",
+    "material-design-icons": "^3.0.1",
     "multer": "^1.4.5-lts.1",
     "next": "13.4.2",
     "next-images": "^1.8.5",
+    "pdf-viewer-reactjs": "^3.0.0-beta.2",
     "pdfjs-dist": "^2.15.349",
     "postcss": "8.4.23",
     "react": "18.2.0",
@@ -58,6 +61,7 @@
     "@types/bcryptjs": "^2.4.2",
     "@types/jsonwebtoken": "^9.0.2",
     "@types/multer": "^1.4.7",
+    "@types/pdf-viewer-reactjs": "^2.2.2",
     "prisma": "^4.14.0"
   }
 }

@@ -66,6 +66,7 @@ export const getPostHandler = async({
                 message:'Post with that ID not found',
             });
         }
+        console.log("postid",post)
 
         return{
             status: 'success',
