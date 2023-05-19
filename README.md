@@ -1,3 +1,39 @@
+# # Book Reading Application
+This is a full-stack book reading application built using TypeScript, tRPC, and a SQL-like database (PostgreSQL) for persistence. The application allows users to view a gallery of books, read book details including a PDF file, and add new books with thumbnails and PDF files.
+
+## Features
+View all added books in a gallery view
+Read book details and PDF files
+Add new books with thumbnails and PDF files
+Optional star rating system for books
+Technologies Used
+Frontend: Next.js, React, tRPC, Tailwind CSS
+Backend: Node.js, Express.js, tRPC, Prisma ORM, docker
+Database: PostgreSQL,redis
+## Getting Started
+To get started with the application, follow these steps:
+
+Clone the repository: git clone https://github.com/Aashish095/book-reading-app.git
+Navigate to the project directory: cd book-reading-app
+Install dependencies: npm install or yarn install
+## Set up the database:
+I have added docker-compose.yml 
+use command :- sudo docker compose up -d //it start the postgresql, redis
+Configure the database connection in the prisma/.env file.
+Run database migrations: npx prisma migrate dev or yarn prisma migrate dev
+Start the development server: npm run dev or yarn dev
+Open the application in your browser: http://localhost:3000
+## Folder Structure
+client/: Contains the frontend application built with Next.js and React.
+server/: Contains the backend server built with Node.js and Express.js.
+prisma/: Contains Prisma configuration and database migrations.
+## Configuration
+Database Connection: Update the prisma/.env file with your PostgreSQL database connection details.
+Port: The application runs on port 3000 by default. You can change it in the .env file in the root directory.
+Contributing
+Contributions to the project are welcome. Feel free to open issues and submit pull requests to help improve the application.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
